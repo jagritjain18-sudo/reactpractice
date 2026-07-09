@@ -7,7 +7,7 @@ const App= ()=>{
   <div className="w-1/6 h-full flex justify-center items-center  p-5 ">
   <div className='w-full h-full bg-amber-600 rounded-xl '></div>
   </div>
-  <div className="w-5/6 h-full bg-green-400 flex rounded-xl"></div>
+  <div className="w-5/6 h-full bg-white flex rounded-xl"></div>
 </div>
   )
 }
