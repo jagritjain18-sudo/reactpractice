@@ -1,9 +1,9 @@
 import React from 'react'
 
-function TaskContext ({children}) {
+function AuthProvider ({children}) {
   return (
     <div>{children}</div>
   )
 }
 
-export default TaskContext
+export default AuthProvider
