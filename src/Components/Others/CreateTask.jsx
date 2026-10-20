@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { getLocalStorage } from '../../utils/LocalStorage';
+import { AuthContext } from '../../Context/AuthProvider'
 
 function CreateTask (){
+  const {userData, setUserData} = useContext(AuthContext)
   const [taskTitle,setTaskTittle]=useState('');
   const [date,setDate]=useState('');
   const[assignTo,setAssignTo]=useState('');
@@ -11,13 +13,13 @@ function CreateTask (){
   const  sumbitHandler=(e)=>{
     e.preventDefault()
     setNewTask({taskTitle,date,assignTo,category,description,active: false, newTask: true, failed: false, completed: false})
-    const {employees} = getLocalStorage();
-    employees.forEach(function (elem){
+    const data=[...userData] 
+    data.forEach(function (elem){
       if(elem.firstName==assignTo){
       elem.tasks.push(newTask);
-      console.log(elem);
     }
     })
+    setUserData(data);
     setTaskTittle('')
     setDate('')
     setAssignTo('')

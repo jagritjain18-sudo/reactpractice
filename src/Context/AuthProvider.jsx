@@ -5,8 +5,8 @@ function AuthProvider ({children}) {
   //localStorage.clear();
   const [userData,setUserData]=useState(null);
   useEffect(()=>{
-    const {employees,admin}=getLocalStorage();
-    setUserData({employees,admin});
+    const {employees}=getLocalStorage();
+    setUserData(employees);
   },[]);
   return (
     <div>

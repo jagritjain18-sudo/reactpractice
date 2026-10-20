@@ -9,7 +9,7 @@ import { AuthContext } from './Context/AuthProvider'
 const App = () => {
   const [user, setUser] = useState(null)
   const [loggedInUserData, setLoggedInUserData] = useState(null)
-  const { userData, setUserData } = useContext(AuthContext)
+  const {userData, setUserData } = useContext(AuthContext)
 
   useEffect(() => {
     setLocalStorage();
@@ -25,33 +25,39 @@ const App = () => {
   }, [])
 
   const handleLogin = (email, password) => {
-   
     const cleanEmail = email.trim().toLowerCase();
     const cleanPassword = password.trim();
 
-   
+    // 1. Admin Authentication Check
     if ((cleanEmail === 'admin@example.com' || cleanEmail === 'admin@me.com') && cleanPassword === '123') {
       setUser('admin')
       localStorage.setItem('loggedInUser', JSON.stringify({ role: 'admin' }))
       return true;
     } 
     
-   
-    else if (userData && userData.employees) {
-      const employee = userData.employees.find((e) => cleanEmail === e.email && cleanPassword === e.password)
-      
-      if (employee) {
-        setUser('employee')
-        setLoggedInUserData(employee)
-        localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee', data: employee }))
-        return true; 
+    // 2. Employee Authentication Check
+    if (userData) {
+      // FIX: Correctly grab the target array out of the employees property
+      const targetArray = userData.employees ? userData.employees : userData;
+
+      if (Array.isArray(targetArray)) {
+        const employee = targetArray.find(
+          (e) => e.email.trim().toLowerCase() === cleanEmail && e.password.toString().trim() === cleanPassword
+        );
+        
+        if (employee) {
+          setUser('employee')
+          setLoggedInUserData(employee)
+          localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee', data: employee }))
+          return true; 
+        }
       }
     }
 
-    
     alert("Invalid Credentials")
     return false;
   }
+
 
   return (
     <>

@@ -14,7 +14,7 @@ const AllTask = () => {
                     <h5 className='text-lg font-medium w-1/5'>Failed</h5>
                 </div>
                 <div className=''>
-                    {userData.employees.map(function(elem, idx) {
+                    {userData.map(function(elem, idx) {
                         if (!elem) return null;
                         const employeeInfo =  elem;
                         const taskCounts = employeeInfo.taskCounts ;
