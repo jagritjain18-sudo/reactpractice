@@ -11,9 +11,7 @@ const App = () => {
   const [loggedInUserData, setLoggedInUserData] = useState(null)
   const {userData, setUserData } = useContext(AuthContext)
 
-  useEffect(() => {
-    setLocalStorage();
-  }, [])
+ 
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('loggedInUser')
@@ -23,6 +21,21 @@ const App = () => {
       setLoggedInUserData(parsedUser.data)
     }
   }, [])
+  // Add this inside your App component in App.jsx
+useEffect(() => {
+  // If an employee is logged in and the global context data changes
+  if (user === 'employee' && loggedInUserData && userData) {
+    
+    // Find the latest, freshly updated version of this logged-in employee from context
+    const updatedEmployee = userData.find(e => e.email === loggedInUserData.email);
+    
+    if (updatedEmployee) {
+      // Push the fresh data into the dashboard state
+      setLoggedInUserData(updatedEmployee);
+    }
+  }
+}, [userData, user]); // This triggers automatically whenever context data changes
+
 
   const handleLogin = (email, password) => {
     const cleanEmail = email.trim().toLowerCase();
@@ -35,9 +48,9 @@ const App = () => {
       return true;
     } 
     
-    // 2. Employee Authentication Check
+   
     if (userData) {
-      // FIX: Correctly grab the target array out of the employees property
+     
       const targetArray = userData.employees ? userData.employees : userData;
 
       if (Array.isArray(targetArray)) {

@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { getLocalStorage } from '../../utils/LocalStorage';
 import { AuthContext } from '../../Context/AuthProvider'
 
@@ -6,27 +6,48 @@ function CreateTask (){
   const {userData, setUserData} = useContext(AuthContext)
   const [taskTitle,setTaskTittle]=useState('');
   const [date,setDate]=useState('');
-  const[assignTo,setAssignTo]=useState('');
-  const[category,setCategory]=useState('');
-  const[description,setDescription]=useState('');
-  const[newTask,setNewTask]=useState({});
-  const  sumbitHandler=(e)=>{
+  const [assignTo,setAssignTo]=useState('');
+  const [category,setCategory]=useState('');
+  const [description,setDescription]=useState('');
+  
+  const sumbitHandler=(e)=>{
     e.preventDefault()
-    setNewTask({taskTitle,date,assignTo,category,description,active: false, newTask: true, failed: false, completed: false})
-    const data=[...userData] 
-    data.forEach(function (elem){
-      if(elem.firstName==assignTo){
-      elem.tasks.push(newTask);
+    
+    const taskObj = {
+      taskTitle,
+      date,
+      assignTo,
+      category,
+      description,
+      active: false, 
+      newTask: true, 
+      failed: false, 
+      completed: false
     }
+
+    const data = JSON.parse(JSON.stringify(userData)) 
+    
+    data.forEach(function (elem){
+     
+      if(elem.firstName.trim() === assignTo.trim()){
+       
+        elem.tasks.push(taskObj);
+      }
+      if (elem.taskCounts) {
+        elem.taskCounts.newTask = (elem.taskCounts.newTask || 0) + 1;}
     })
+    
+    console.log("Updated Data Structure:", data);
     setUserData(data);
+    localStorage.setItem('employees', JSON.stringify(data)); 
+   
     setTaskTittle('')
     setDate('')
     setAssignTo('')
     setCategory('')
     setDescription('')
-    
   }
+
   return (
     <div className=' p-5 bg-[#2C2D2D] mt-7 rounded'>
         <form className='flex flex-wrap w-full items-start justify-between p-4' onSubmit={(e)=>{
@@ -45,7 +66,7 @@ function CreateTask (){
         <div className='w-2/5 flex flex-col items-start'>
             <h2 className='text-lg text-gray-300 mb-1'>Description</h2>
             <textarea className='w-full h-44 text-sm py-2 px-4 rounded outline-none bg-transparent border border-gray-400' onChange={(e)=>setDescription(e.target.value)} value={description}></textarea><br></br>
-            <button className='bg-emerald-500 py-3 hover:bg-emerald-600 px-5 rounded text-sm mt-4 w-full' type='sumbit' >Create Task</button>
+            <button className='bg-emerald-500 py-3 hover:bg-emerald-600 px-5 rounded text-sm mt-4 w-full' type='submit' >Create Task</button>
         </div>
     </form>
     </div>
