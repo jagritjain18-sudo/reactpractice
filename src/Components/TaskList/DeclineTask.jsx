@@ -7,9 +7,9 @@ function DeclineTask ({data}){
                 <h3 className='bg-red-600 px-4 py-1 text-m font-semibold'>{data.category}</h3>
                 <h4 className='text-m font-bold'>{data.taskDate}</h4>
                 </div>
-                <h1 className='text-2xl font-semibold mt-5'>{data.taskTitle}</h1>
+                <h1 className='text-2xl font-semibold mt-5 '>{data.taskTitle}</h1>
                 <p className='text-lg mt-2 font-medium'>{data.taskDescription}</p>
-                <button className='bg-red-500 mt-5 text-sm rounded text-center w-full p-1'>Failed</button>
+                <button className='bg-red-500 mt-5  text-sm rounded text-center w-full p-1'>Failed</button>
         </div>
   )
 }

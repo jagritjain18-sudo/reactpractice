@@ -7,6 +7,7 @@ function EmployeeDashboard({data}) {
     <div className='w-screen h-screen bg-[#cIcIcI] p-10'>
     <Header data={data}/>
     <TaskNumber data={data}/>
+
     <TaskList data={data}/>
     </div>
   )
