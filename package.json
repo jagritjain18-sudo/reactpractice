@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "reactproject",
+=======
+  "name": "first-prac",
+>>>>>>> 52d76c858fcd5f8e960ac9f6ab5cb6f6c91741c0
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,10 +14,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@tailwindcss/vite": "^4.3.3",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "tailwindcss": "^4.3.3"
+=======
+    "@tailwindcss/vite": "^4.3.2",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwindcss": "^4.3.2"
+>>>>>>> 52d76c858fcd5f8e960ac9f6ab5cb6f6c91741c0
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
