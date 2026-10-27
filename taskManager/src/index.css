@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import "tailwindcss";
 body{
   background-color: black;
@@ -7,6 +6,3 @@ body{
 #TaskList::-webkit-scrollbar {
   display: none;
 }
-=======
-@import "tailwindcss";
->>>>>>> 52d76c858fcd5f8e960ac9f6ab5cb6f6c91741c0

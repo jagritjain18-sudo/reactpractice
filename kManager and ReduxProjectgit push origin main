@@ -1,0 +1,38 @@
+ .gitignore => ReduxProject/.gitignore              |    0
+ README.md => ReduxProject/README.md                |    4 [31m-[m
+ eslint.config.js => ReduxProject/eslint.config.js  |    0
+ ReduxProject/index.html                            |   13 [32m+[m
+ ReduxProject/package-lock.json                     | 2477 [32m++++++++++++++++++++[m
+ ReduxProject/package.json                          |   27 [32m+[m
+ ReduxProject/vite.config.js                        |    7 [32m+[m
+ taskManager/.gitignore                             |   24 [32m+[m
+ taskManager/README.md                              |    0
+ taskManager/eslint.config.js                       |   21 [32m+[m
+ index.html => taskManager/index.html               |    4 [31m-[m
+ package-lock.json => taskManager/package-lock.json | 1904 [32m++++[m[31m-----------[m
+ package.json => taskManager/package.json           |   11 [31m-[m
+ {public => taskManager/public}/favicon.svg         |    0
+ {public => taskManager/public}/icons.svg           |    0
+ {src => taskManager/src}/App.css                   |    0
+ {src => taskManager/src}/App.jsx                   |   18 [31m-[m
+ {src => taskManager/src}/Components/Auth/Login.jsx |    0
+ .../src}/Components/Dashboard/AdminDashboard.jsx   |    0
+ .../Components/Dashboard/EmployeeDashboard.jsx     |    0
+ .../src}/Components/Others/AllTask.jsx             |    0
+ .../src}/Components/Others/CreateTask.jsx          |    0
+ .../src}/Components/Others/Header.jsx              |    0
+ .../src}/Components/Others/TaskNumber.jsx          |    0
+ .../src}/Components/TaskList/AcceptTask.jsx        |    0
+ .../src}/Components/TaskList/CompleteTask.jsx      |    0
+ .../src}/Components/TaskList/DeclineTask.jsx       |    0
+ .../src}/Components/TaskList/NewTask.jsx           |    0
+ .../src}/Components/TaskList/TaskList.jsx          |    0
+ {src => taskManager/src}/Context/AuthProvider.jsx  |    0
+ {src => taskManager/src}/assets/hero.png           |  Bin
+ {src => taskManager/src}/assets/react.svg          |    0
+ {src => taskManager/src}/assets/vite.svg           |    0
+ {src => taskManager/src}/index.css                 |    4 [31m-[m
+ {src => taskManager/src}/main.jsx                  |    7 [31m-[m
+ {src => taskManager/src}/utils/LocalStorage.jsx    |    0
+ vite.config.js => taskManager/vite.config.js       |    8 [31m-[m
+ 37 files changed, 2995 insertions(+), 1534 deletions(-)

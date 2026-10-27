@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useContext, useEffect, useState } from 'react'
 import './index.css'
 import Login from './Components/Auth/Login'
@@ -82,20 +81,3 @@ useEffect(() => {
 }
 
 export default App
-=======
-import react from 'react'
-
-const App= ()=>{
-  return(
-    <div className=" h-screen w-screen flex  bg-blue-600 justify-center items-center
-    flex-fit">
-  <div className="w-1/6 h-full flex justify-center items-center  p-5 ">
-  <div className='w-full h-full bg-amber-600 rounded-xl '></div>
-  </div>
-  <div className="w-5/6 h-full bg-white flex rounded-xl"></div>
-</div>
-  )
-}
-
-export default App
->>>>>>> 52d76c858fcd5f8e960ac9f6ab5cb6f6c91741c0
