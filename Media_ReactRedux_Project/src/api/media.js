@@ -19,7 +19,6 @@ export async function fetchPhoto(query, page = 1, per_page = 20) {
 
 export async function fetchGif(query, per_page = 20) {
   try {
-    // ✅ Fix: Added '/v1/gifs/search' to the end of the URL string
     const res = await axios('https://api.giphy.com/v1/gifs/search', {
       params: {
         api_key: GIPHY_KEY,
