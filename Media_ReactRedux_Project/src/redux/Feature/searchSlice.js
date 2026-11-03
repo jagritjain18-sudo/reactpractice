@@ -4,10 +4,10 @@ export const searchSlice=createSlice({
     name:'search',
     initialState:{
         query:'',
-        loading:'false',
-        error:'null',
+        loading:false,
+        error:null,
         result:[],
-        activeTab:'photos'
+        activeTab:'Photos'
     },
     reducers:{
         setQuery(state,action){
