@@ -7,7 +7,7 @@ export const searchSlice=createSlice({
         loading:false,
         error:null,
         result:[],
-        activeTab:'Photos'
+        activeTab:'photos'
     },
     reducers:{
         setQuery(state,action){
