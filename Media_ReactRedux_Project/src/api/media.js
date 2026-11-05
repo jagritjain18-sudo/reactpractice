@@ -2,7 +2,7 @@ import axios from 'axios'
 const UNSPLASH_KEY = import.meta.env.VITE_UNSPLASH_KEY;
 const GIPHY_KEY= import.meta.env.VITE_GIPHY_KEY;
 
-export async function fetchPhoto(query, page = 1, per_page = 20) {
+export async function fetchPhoto(query, page = 10, per_page = 20) {
   
     const res = await axios('https://api.unsplash.com/search/photos', {
       params: { query, page, per_page },

@@ -8,7 +8,7 @@ const Tabs = () => {
     const activeTab = useSelector((state) => state.search.activeTab);
 
     return (
-        <div className='flex gap-3 p-5'>
+        <div className='flex gap-3 p-5  justify-center px-10'>
             {tabList.map((element, idx) => (
                 <button 
                     key={idx}  
