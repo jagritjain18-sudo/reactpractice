@@ -1,16 +1,6 @@
 import React from 'react'
 
 const ResultCard = ({item}) => {
-  const addToCollection=(item)=>{
-    let oldData = JSON.parse(localStorage.getItem('collection')) || [];
-    
-    // 2. Append 'item', preventing the ReferenceError
-    let newData = [...oldData, item];
-    
-   
-    localStorage.setItem('collection', JSON.stringify(newData));
-    console.log(newData)
-  }
   return (
     <>
    
